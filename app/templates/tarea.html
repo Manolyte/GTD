@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block titulo %}
+    {{ titulo }}
+{% endblock %}
+
+{% block contenido %}
+    <div class="form">
+        {% if mensaje %}
+            <p>{{ mensaje | safe }}</p>
+        {% endif %}
+        <form method="POST" action="/nuevaTarea" >
+            <h3>Tarea</h3>
+            <input type="text" name="tarea" placeholder="Nombre de Tarea">
+            <h3>Duración (minutos)</h3>
+            <input type="text" name="duracion" placeholder="Duración de Tarea">
+            <h3>Fecha Fin</h3>
+            <input type="text" name="fecFin" placeholder="Fecha Fin de Tarea">
+            <h3>Actividad</h3>
+            <input type="text" name="idactividad" placeholder="Actividad">
+            <input type="submit" value="Aceptar">
+        </form>
+    </div>
+{% endblock %}
